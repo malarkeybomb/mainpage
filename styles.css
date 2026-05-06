@@ -570,6 +570,7 @@ body {
   object-fit: contain;
   object-position: bottom;
   display: block;
+  mix-blend-mode: multiply;
 }
 .ccm-jack { margin-right: -18px; z-index: 1; }
 .ccm-ace  { z-index: 0; }
