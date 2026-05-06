@@ -555,25 +555,62 @@ body {
   border-bottom: 3px solid var(--black);
 }
 .ccm-scene {
-  padding: 0.5rem 0.5rem 0;
-  display: flex; align-items: flex-end; justify-content: space-between;
-  min-height: 180px;
+  padding: 0.8rem 0.6rem;
+  display: flex; align-items: center; justify-content: space-between;
   gap: 0.4rem;
+  background: var(--blue);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 8px 8px;
+  min-height: 160px;
 }
-.ccm-chars {
-  display: flex; align-items: flex-end;
+
+.ccm-speech-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
   flex: 1;
 }
-.ccm-char-img {
-  height: 170px;
-  width: auto;
-  object-fit: contain;
-  object-position: bottom;
-  display: block;
-  mix-blend-mode: multiply;
+.ccm-bubble {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 6px;
+  font-family: var(--font-comic);
+  font-size: 0.7rem; letter-spacing: 0.03em;
+  line-height: 1.3;
+  padding: 0.4em 0.5em;
+  text-align: center;
+  box-shadow: 2px 2px 0 var(--black);
+  position: relative;
 }
-.ccm-jack { margin-right: -18px; z-index: 1; }
-.ccm-ace  { z-index: 0; }
+.ccm-bubble::after {
+  content: '';
+  position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: var(--black);
+}
+.ccm-char-label {
+  font-family: var(--font-comic);
+  font-size: 0.65rem; letter-spacing: 0.1em;
+  padding: 0.1em 0.5em;
+  border: 2px solid var(--black);
+  border-radius: 2px;
+}
+.jack-label { background: var(--red);   color: var(--white); }
+.ace-label  { background: var(--green); color: var(--white); }
+
+.ccm-jamaica-card {
+  flex-shrink: 0;
+  background: var(--green);
+  border: 3px solid var(--black);
+  border-radius: 4px;
+  padding: 0.5rem 0.4rem;
+  text-align: center;
+  box-shadow: 3px 3px 0 var(--black);
+}
+.ccm-jamaica-flag { font-size: 1.8rem; line-height: 1; margin-bottom: 0.2rem; }
+.ccm-jamaica-text {
+  font-family: var(--font-comic);
+  font-size: 0.6rem; letter-spacing: 0.05em;
+  color: var(--white); line-height: 1.3;
+}
 
 .ccm-item {
   flex-shrink: 0;
