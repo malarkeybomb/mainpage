@@ -404,9 +404,11 @@ body {
   border: var(--outline);
   border-radius: 8px;
   box-shadow: var(--shadow);
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
   position: relative;
   transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
 }
 .char-card:hover {
   transform: translate(-3px, -3px);
@@ -421,47 +423,27 @@ body {
   font-size: 0.9rem; letter-spacing: 0.05em;
   padding: 0.1em 0.5em;
   border-radius: 3px;
+  z-index: 1;
 }
 
-.char-avatar {
-  width: 80px; height: 80px;
-  border: var(--outline);
-  border-radius: 50%;
+.char-img-wrap {
+  margin: 0 -1.5rem 0.8rem;
+  background: #f0f0f0;
+  border-bottom: var(--outline);
   overflow: hidden;
-  margin: 0.5rem auto 1rem;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 260px;
 }
-
-/* Avatar art — simple CSS character representations */
-.avatar-art {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  font-size: 0.7rem;
-  position: relative;
-  overflow: hidden;
+.char-img {
+  width: 100%;
+  max-width: 280px;
+  height: 280px;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
 }
-.jack-art   { background: linear-gradient(180deg, #4FA3E0 50%, var(--red) 50%); }
-.ace-art    { background: linear-gradient(180deg, #7EC8A4 50%, #2d8a50 50%); }
-.derek-art  { background: linear-gradient(180deg, #1A6FD4 50%, #0d3a6e 50%); }
-.annabelle-art { background: linear-gradient(180deg, #8B35CC 50%, #5a1f8a 50%); }
-.martin-art { background: linear-gradient(180deg, #333 50%, #111 50%); }
-
-.avatar-hair  { width: 60%; height: 22px; background: #FFD700; border-radius: 40% 40% 0 0; margin-bottom: -4px; clip-path: polygon(0 100%,50% 0%,100% 100%); }
-.ace-hair     { background: #8B4513; }
-.avatar-bun   { width: 30px; height: 30px; background: #222; border-radius: 50%; margin-bottom: -8px; }
-.avatar-afro  { width: 70px; height: 50px; background: #111; border-radius: 50%; position: absolute; top: -5px; }
-.avatar-head-martin { width: 55px; height: 35px; background: #d4b896; border-radius: 40% 40% 30% 30%; margin-bottom: -4px; }
-
-.avatar-face { display: flex; flex-direction: column; align-items: center; }
-.avatar-eyes { font-size: 1.2rem; line-height: 1; }
-.avatar-shirt { font-family: var(--font-comic); font-size: 1rem; font-weight: bold; padding: 2px; text-align: center; }
-.jack-shirt    { background: var(--red); color: var(--white); width: 100%; }
-.ace-shirt     { background: #2d8a50; color: var(--white); width: 100%; }
-.derek-shirt   { background: var(--blue); color: var(--yellow); width: 100%; }
-.annabelle-shirt { background: #8B35CC; color: var(--white); width: 100%; font-size: 1.6rem; }
-.martin-shirt  { background: #222; color: var(--white); width: 100%; font-size: 1.6rem; font-weight: 900; }
 
 .char-info { margin-bottom: 1rem; }
 .char-name {
@@ -522,6 +504,13 @@ body {
 .char-derek .stat-bar .fill  { background: var(--blue); }
 .char-annabelle .stat-bar .fill { background: var(--purple); }
 .char-martin .stat-bar .fill { background: #555; }
+
+/* Per-character image area background */
+.char-jack .char-img-wrap     { background: #ffe8e6; }
+.char-ace .char-img-wrap      { background: #e6f7eb; }
+.char-derek .char-img-wrap    { background: #e6f0fc; }
+.char-annabelle .char-img-wrap { background: #f3e6fa; }
+.char-martin .char-img-wrap   { background: #e8e8e8; }
 
 /* ---- ISSUE #1 ---- */
 .issue1 { background: var(--cream); padding-bottom: 4rem; }
