@@ -270,10 +270,10 @@ body {
 }
 .panel-dream {
   background: linear-gradient(135deg, #87CEEB, #00CED1);
-  display: flex; align-items: center; gap: 0.5rem;
+  display: flex; flex-direction: column; gap: 0.2rem;
 }
-.panel-dream .panel-label { font-family: var(--font-comic); font-size: 1rem; letter-spacing: 0.05em; }
-.panel-dream .panel-icon { font-size: 2rem; }
+.panel-dream .panel-label { font-family: var(--font-comic); font-size: 0.85rem; letter-spacing: 0.05em; font-weight: bold; }
+.panel-dream .panel-icon  { font-family: var(--font-comic); font-size: 1rem; font-style: italic; color: #1a1a2e; }
 
 .panel-broke { background: #1a1a2e; color: var(--white); }
 .panel-broke .panel-label {
